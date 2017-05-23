@@ -1,0 +1,44 @@
+CMATH Build Started  6:17:07.22 Tue 05/23/2017 
+cc1.exe: warning: command line option '-Wuseless-cast' is valid for C++/ObjC++ but not for C
+cc1.exe: warning: command line option '-Wuseless-cast' is valid for C++/ObjC++ but not for C
+src/mp_Add.c: In function 'mpAdd':
+src/mp_Add.c:5:5: warning: traditional C rejects ISO C style function definitions [-Wtraditional]
+ int mpAdd(unsigned char augend[], unsigned char addend[], unsigned char sum[]) {
+     ^~~~~
+src/mp_Add.c:9:11: warning: implicit declaration of function 'mostSignificantDigit' [-Wimplicit-function-declaration]
+  if ((m = mostSignificantDigit(addend, IDIGIT)) == 0)
+           ^~~~~~~~~~~~~~~~~~~~
+src/mp_Add.c:10:11: warning: implicit declaration of function 'mpAddShort'; did you mean 'mulMPShort'? [-Wimplicit-function-declaration]
+   return (mpAddShort(augend, addend[0], sum));
+           ^~~~~~~~~~
+           mulMPShort
+src/mp_Add.c:22:2: warning: implicit declaration of function 'mpCopy'; did you mean 'memcpy'? [-Wimplicit-function-declaration]
+  mpCopy(sum, t);
+  ^~~~~~
+  memcpy
+src/mp_Add.c: In function 'mpAddShort':
+src/mp_Add.c:28:5: warning: traditional C rejects ISO C style function definitions [-Wtraditional]
+ int mpAddShort(unsigned char augend[], unsigned char addend[], unsigned char sum[]) {
+     ^~~~~~~~~~
+src/mp_Add.c:32:15: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+  sum[0] = a.x = augend[0] + addend;
+               ^
+cc1.exe: warning: command line option '-Wuseless-cast' is valid for C++/ObjC++ but not for C
+src/mp_MSigDit.c: In function 'mostSignificantDigit':
+src/mp_MSigDit.c:5:5: warning: traditional C rejects ISO C style function definitions [-Wtraditional]
+ int mostSignificantDigit(unsigned char x[], unsigned int m) {
+     ^~~~~~~~~~~~~~~~~~~~
+cc1.exe: warning: command line option '-Wuseless-cast' is valid for C++/ObjC++ but not for C
+src/mp_Copy.c: In function 'mpCopy':
+src/mp_Copy.c:5:16: warning: traditional C rejects ISO C style function definitions [-Wtraditional]
+ unsigned char *mpCopy(unsigned char to[], unsigned char fr[]) {
+                ^~~~~~
+Completed:  6:17:07.52 Tue 05/23/2017 
+make: Nothing to be done for 'all'.
+make: Nothing to be done for 'all'.
+make: Nothing to be done for 'all'.
+C:\mingw64\mingw64-7.1.0 POSIX SEH\mingw64\bin\gcc -g -ffreestanding -std=c11 -Wall -Wunused -Wextra -Wformat=2 -Wformat-security -Wmisleading-indentation -Wmissing-include-dirs -pedantic -Wsuggest-attribute=const -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wtraditional -Wpointer-arith -Wunused-macros -Wc99-c11-compat -Wuseless-cast -Wpacked -Wpadded -Winline   -c -o src/main.o src/main.c
+C:\mingw64\mingw64-7.1.0 POSIX SEH\mingw64\bin\gcc -g -ffreestanding -std=c11 -Wall -Wunused -Wextra -Wformat=2 -Wformat-security -Wmisleading-indentation -Wmissing-include-dirs -pedantic -Wsuggest-attribute=const -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wtraditional -Wpointer-arith -Wunused-macros -Wc99-c11-compat -Wuseless-cast -Wpacked -Wpadded -Winline   -c -o src/mp_Add.o src/mp_Add.c
+C:\mingw64\mingw64-7.1.0 POSIX SEH\mingw64\bin\gcc -g -ffreestanding -std=c11 -Wall -Wunused -Wextra -Wformat=2 -Wformat-security -Wmisleading-indentation -Wmissing-include-dirs -pedantic -Wsuggest-attribute=const -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wtraditional -Wpointer-arith -Wunused-macros -Wc99-c11-compat -Wuseless-cast -Wpacked -Wpadded -Winline   -c -o src/mp_MSigDit.o src/mp_MSigDit.c
+C:\mingw64\mingw64-7.1.0 POSIX SEH\mingw64\bin\gcc -g -ffreestanding -std=c11 -Wall -Wunused -Wextra -Wformat=2 -Wformat-security -Wmisleading-indentation -Wmissing-include-dirs -pedantic -Wsuggest-attribute=const -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wtraditional -Wpointer-arith -Wunused-macros -Wc99-c11-compat -Wuseless-cast -Wpacked -Wpadded -Winline   -c -o src/mp_Copy.o src/mp_Copy.c
+C:\mingw64\mingw64-7.1.0 POSIX SEH\mingw64\bin\gcc -g -ffreestanding -std=c11 -Wall -Wunused -Wextra -Wformat=2 -Wformat-security -Wmisleading-indentation -Wmissing-include-dirs -pedantic -Wsuggest-attribute=const -Wduplicated-branches -Wduplicated-cond -Wfloat-equal -Wtraditional -Wpointer-arith -Wunused-macros -Wc99-c11-compat -Wuseless-cast -Wpacked -Wpadded -Winline -o cmath src/main.o src/mp_Add.o src/mp_MSigDit.o src/mp_Copy.o
