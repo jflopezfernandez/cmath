@@ -1,8 +1,5 @@
-echo %DATE% %TIME% | awk -F"[ /:.]" "{printf(""""%s%02d%02d-%02d%02d%02d\n"""", $4, $3, $2, $5, $6, $7);}" >%temp%\now.txt
-set /p now=<%temp%\now.txt
-echo %now%
-
-@echo CMATH Build Started %time% %date% > src/build_%date%_%time%.log > src/stderr.log
+@echo CMATH Build Started %time% %date% > src/build.log
+@echo CMATH Build Started %time% %date% > src/stderr.log
 
 @echo off
 IF /I "%1%"=="-B" (
@@ -12,4 +9,5 @@ IF /I "%1%"=="-B" (
 )
 
 @echo on
-@echo Completed: %time% %date% >> src/build.log >> src/stderr.log
+@echo Completed: %time% %date% >> src/build.log
+@echo Completed: %time% %date% >> src/stderr.log

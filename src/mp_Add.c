@@ -3,13 +3,16 @@
 
 
 int mpAdd(unsigned char augend[], unsigned char addend[], unsigned char sum[]) {
-	int i, m;
+	int i, 
+		m = mpMostSignificantDigit(addend, IDIGIT);
 	unsigned char t[IDIGIT];
 	
-	if ((m = mostSignificantDigit(addend, IDIGIT)) == 0)
-		return (mpAddShort(augend, addend[0], sum));
-	
-	m = MAX(m, mostSignificantDigit(augend, IDIGIT));
+	if (m == 0) {
+		int r = mpAddShort(augend, (unsigned char *) addend[0], sum);
+		return r;
+	}
+		
+	m = MAX(m, mpMostSignificantDigit(augend, IDIGIT));
 	
 	memset(t, 0, IDIGIT);
 	
@@ -27,7 +30,7 @@ int mpAdd(unsigned char augend[], unsigned char addend[], unsigned char sum[]) {
 
 int mpAddShort(unsigned char augend[], unsigned char addend[], unsigned char sum[]) {
 	int i;
-	int m = mostSignificantDigit(augend, IDIGIT);
+	int m = mpMostSignificantDigit(augend, IDIGIT);
 	
 	sum[0] = a.x = augend[0] + addend;
 	

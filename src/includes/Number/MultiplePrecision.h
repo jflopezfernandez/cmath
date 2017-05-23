@@ -12,9 +12,6 @@
 #define ADIGIT 1000
 #define IDIGIT 415
 
-#define MIN(a,b) (a < b ? a : b)
-#define MAX(a,b) (a > b ? a : b)
-
 
 /** Accumulator */
 union {
@@ -24,37 +21,39 @@ union {
 
 
 /** Prototypes */
-int addMP(unsigned char [], unsigned char [], unsigned char []);
-int addMPShort(unsigned char [], unsigned char [], unsigned char []);
+int mpAdd(unsigned char [], unsigned char [], unsigned char []);
+int mpAddShort(unsigned char [], unsigned char [], unsigned char []);
 
-int subMP(unsigned char [], unsigned char [], unsigned char []);
-int subMPShort(unsigned char [], unsigned char [], unsigned char []);
+int mpSub(unsigned char [], unsigned char [], unsigned char []);
+int mpSubShort(unsigned char [], unsigned char [], unsigned char []);
 
-int mulMP(unsigned char [],  unsigned char [],  unsigned char []);
-int mulMPShort(unsigned char [],  unsigned char [], unsigned char []);
+int mpMul(unsigned char [],  unsigned char [],  unsigned char []);
+int mpMulShort(unsigned char [],  unsigned char [], unsigned char []);
 
-int divMP(unsigned char [], unsigned char [], unsigned char [], unsigned char []);
-int divMPShort(unsigned char [], unsigned char [], unsigned char [], unsigned char []);
+int mpDiv(unsigned char [], unsigned char [], unsigned char [], unsigned char []);
+int mpDivShort(unsigned char [], unsigned char [], unsigned char [], unsigned char []);
 
-int compareMP(unsigned char [], unsigned char []);
-int isZeroMP(unsigned char []);
+int mpCompare(unsigned char [], unsigned char []);
+int mpIsZero(unsigned char []);
 
-int andMP(unsigned char [], unsigned char [], unsigned char []);
+int mpAnd(unsigned char [], unsigned char [], unsigned char []);
 
-unsigned char *leftByteShiftMP(unsigned char [], unsigned int);
-unsigned char *leftBitShiftMP(unsigned char [], unsigned int);
-unsigned char *rightByteShiftMP(unsigned char [], unsigned int);
-unsigned char *rightBitShiftMP(unsigned char [], unsigned int);
+int mpMostSignificantDigit(unsigned char x[], unsigned int m);
 
-unsigned char *scanMP(unsigned char *, unsigned char *);
-unsigned char *copyMP(unsigned char *, unsigned char *);
+unsigned char *mpLeftByteShift(unsigned char [], unsigned int);
+unsigned char *mpLeftBitShift(unsigned char [], unsigned int);
+unsigned char *mpRightByteShift(unsigned char [], unsigned int);
+unsigned char *mpRightBitShift(unsigned char [], unsigned int);
+
+unsigned char *mpScan(unsigned char *, unsigned char *);
+unsigned char *mpCopy(unsigned char *, unsigned char *);
 unsigned char *convertASCIIToMP(unsigned char *, unsigned char *);
 unsigned char *convertMPtoASCII(unsigned char *, unsigned char *);
 
 char *packASCIINumber(char *);
 char *printASCIINumber(char *);
 
-void dumpMP(unsigned char []);
+void mpDump(unsigned char []);
 
 
 

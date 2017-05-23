@@ -2,7 +2,7 @@
 #include "includes\Main.h"
 
 
-int mostSignificantDigit(unsigned char x[], unsigned int m) {
+int mpMostSignificantDigit(unsigned char x[], unsigned int m) {
 	if (m) {
 		m--;
 		
