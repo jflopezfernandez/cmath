@@ -1,19 +1,16 @@
-CC=C:\mingw64\mingw64-7.1.0 POSIX SEH\mingw64\bin\gcc
+CC := C:\mingw64\mingw64-7.1.0 POSIX SEH\mingw64\bin\gcc
 
-VPATH = src:../headers
+SRCDIR := src/
+OUTPUT := -o cmath
 
-PROGRAM=cmath
-OUTPUT=-o $(PROGRAM)
-CFLAGS=-c -g
+OBJS := main.o
 
-#SRC=main.cpp
-OBJS:=$(patsubst %.c,%.o,$(wildcard **/*.c))
+all: cmath.exe
 
+cmath.exe: $(SRCDIR)$(OBJS)
+	$(CC) $(OUTPUT) $(SRCDIR)$(OBJS)
 
-$(PROGRAM): $(OBJS)
-	$(CC) $(OUTPUT) $(OBJS)
+$(SRCDIR)main.o: $(SRCDIR)main.c
 
-
-.PHONY: clean
 clean:
-	rm -f $(PROGRAM) $(OBJS)
+	rm -rf **/*.o

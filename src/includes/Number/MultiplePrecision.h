@@ -8,6 +8,7 @@
 #define _MP_MAIN
 
 
+/** __MP_MAIN__ */
 #define ADIGIT 1000
 #define IDIGIT 415
 
@@ -46,7 +47,7 @@ unsigned char *rightByteShiftMP(unsigned char [], unsigned int);
 unsigned char *rightBitShiftMP(unsigned char [], unsigned int);
 
 unsigned char *scanMP(unsigned char *, unsigned char *);
-unsigned char *copyMP((unsigned char *, unsigned char *);
+unsigned char *copyMP(unsigned char *, unsigned char *);
 unsigned char *convertASCIIToMP(unsigned char *, unsigned char *);
 unsigned char *convertMPtoASCII(unsigned char *, unsigned char *);
 
